@@ -1,7 +1,7 @@
 {
   "name": "ping-me",
   "version": "1.0.0",
-  "description": "Pop a native OS notification when a url returns 2XX",
+  "description": "Wait for a URL to return 2XX, show an OS notification, and exit",
   "main": "index.js",
   "author": "Caleb Peterson <caleb.peterson@zapier.com>",
   "license": "MIT",

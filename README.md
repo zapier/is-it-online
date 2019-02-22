@@ -1,6 +1,6 @@
 # Ping Me
 
-**Pings you using OS-native mechanism when a url starts returning a `2XX` status code.**
+**Pings you using OS-native mechanism when a url starts returning a `2XX` status code and then exits.**
 
 ## Usage
 
@@ -16,6 +16,22 @@ I could use `electron`, but I think the Internet would rage-quit ... or somethin
 ## Motivation
 
 I got tired of repeatedly refreshing my `localhost` pages in the browser to see if `docker` environment had finished (re)starting...
+
+## Contributing
+
+### Local Development
+
+Local development is typical for a `node` application:
+
+1. `npm install`
+2. `npm develop`
+
+### Local Installation
+
+To install your local working copy:
+
+1. `npm pack`
+2. `npm i -g ping-me-1.0.0.tgz`
 
 ## Credits
 
