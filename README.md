@@ -1,6 +1,6 @@
 # Ping Me
 
-**Pings you using OS-native mechanism when a url starts returning a `2XX` status code and then exits.**
+**Wait for a URL to return 2XX, show an OS notification, and exit.**
 
 ## Motivation
 
