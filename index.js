@@ -13,7 +13,7 @@ const pkg = require("./package.json");
 const log = (...args) => console.log(...args);
 const error = (...args) => console.error(...args);
 
-const URL = "url";
+const TIMED_OUT = "timeout";
 
 program
   .name(pkg.name)
@@ -25,18 +25,6 @@ program
 
 const pollingInterval = (program.interval || 5) * 1000;
 const urls = (program.args || []).filter(arg => arg !== pkg.main);
-
-notifier.on("click", (instance, options) => {
-  try {
-    opn(options[URL], { wait: false });
-  } catch (err) {
-    error(`Error in notification click handler`, err);
-  }
-});
-
-notifier.on("timeout", (instance, options) => {
-  log(`Notification did not receive user input. That's ok.`);
-});
 
 log(`Polling interval ${pollingInterval}s`);
 
@@ -55,14 +43,20 @@ const performLivenessCheck = theUrl =>
             {
               title: "Ping Me",
               message,
-              icon: path.join(__dirname, `./assets/img/noun_sonar_924176.png`),
-              [URL]: theUrl
+              icon: path.join(__dirname, `./assets/img/noun_sonar_924176.png`)
             },
             (err, response) => {
               if (err) {
                 error(`Failed to display notification`, err);
                 reject(err);
               } else {
+                if (response !== TIMED_OUT) {
+                  try {
+                    opn(theUrl, { wait: false });
+                  } catch (err) {
+                    error(`Error in notification click handler`, err);
+                  }
+                }
                 resolve();
               }
             }
