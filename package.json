@@ -1,0 +1,34 @@
+{
+  "name": "ping-me",
+  "version": "1.0.0",
+  "description": "Pop a native OS notification when a url returns 2XX",
+  "main": "index.js",
+  "author": "Caleb Peterson <caleb.peterson@zapier.com>",
+  "license": "MIT",
+  "private": false,
+  "bin": "index.js",
+  "scripts": {
+    "start": "node index",
+    "watch": "nodemon index",
+    "build:macos": "pkg --targets macos ./ --out-path dist/macos/",
+    "build:macos-notifier": "cpy node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app dist/macos/libs/mac.noindex/terminal-notifier.app",
+    "build": "npm-run-all build:*"
+  },
+  "dependencies": {
+    "commander": "^2.19.0",
+    "node-notifier": "^5.4.0",
+    "npm-run-all": "^4.1.5",
+    "opn": "^5.4.0",
+    "wreck": "^14.1.4"
+  },
+  "devDependencies": {
+    "cpy-cli": "^2.0.0",
+    "nodemon": "^1.18.10",
+    "pkg": "^4.3.7"
+  },
+  "pkg": {
+    "assets": [
+      "assets/**/*"
+    ]
+  }
+}

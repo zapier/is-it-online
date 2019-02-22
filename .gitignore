@@ -1,0 +1,10 @@
+# Node/NPM transients
+node_modules
+npm-debug.log
+
+# Builds
+dist
+*.tgz
+
+# OS metadata
+.DS_Store
