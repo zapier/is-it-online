@@ -1,3 +1,5 @@
+![Ping Me](assets/img/noun_sonar_924176.png)
+
 # Ping Me
 
 **Pings you using OS-native mechanism when a url starts returning a `2XX` status code and then exits.**
