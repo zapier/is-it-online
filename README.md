@@ -4,7 +4,7 @@
 
 ## Usage
 
-1. Install: `npm i -g ping-me`
+1. ~~Install: `npm i -g ping-me`~~ [Build and install locally](#local-installation)
 2. Use: `ping-me http://localhost:8080`
 
 ### Native Binary
