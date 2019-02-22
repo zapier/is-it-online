@@ -9,7 +9,7 @@
   "bin": "index.js",
   "scripts": {
     "start": "node index",
-    "watch": "nodemon index",
+    "develop": "nodemon index",
     "build:macos": "pkg --targets macos ./ --out-path dist/macos/",
     "build:macos-notifier": "cpy node_modules/node-notifier/vendor/mac.noindex/terminal-notifier.app dist/macos/libs/mac.noindex/terminal-notifier.app",
     "build": "npm-run-all build:*"

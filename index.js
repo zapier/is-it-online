@@ -16,12 +16,15 @@ const error = (...args) => console.error(...args);
 const URL = "url";
 
 program
+  .name(pkg.name)
+  .description(pkg.description)
   .version(pkg.version)
-  .option("-i --interval [seconds]", "Set the polling interval in seconds")
+  .arguments("<url>")
+  .option("-i, --interval [seconds]", "Set the polling interval in seconds")
   .parse(process.argv);
 
 const pollingInterval = (program.interval || 5) * 1000;
-const urls = program.args || [];
+const urls = (program.args || []).filter(arg => arg !== pkg.main);
 
 notifier.on("click", (instance, options) => {
   try {
@@ -76,12 +79,18 @@ const performLivenessCheck = theUrl =>
     runLivenessCheck();
   });
 
-const finish = new EventEmitter();
-finish.on("finish", ({ code }) => {
-  process.exit(code);
-});
+const quit = (() => {
+  const eventBus = new EventEmitter();
+  eventBus.on("finish", ({ code }) => {
+    process.exit(code);
+  });
 
-performLivenessCheck(urls[0]).then(
-  () => finish.emit("finish", { code: 0 }),
-  () => finish.emit("finish", { code: 1 })
-);
+  return code => eventBus.emit("finish", { code });
+})();
+
+if (urls.length) {
+  // TODO maybe handle multiple urls
+  performLivenessCheck(urls[0]).then(() => quit(0), () => quit(1));
+} else {
+  program.outputHelp();
+}
