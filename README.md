@@ -17,6 +17,8 @@ Native binary's based on `pkg` are a work in progress.
 
 I could use `electron`, but I think the Internet would rage-quit ... or something.
 
+I'd like to find a better option - one which doesn't result in a 100 MB binary.
+
 ## Contributing
 
 ### Local Development
