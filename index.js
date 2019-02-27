@@ -41,7 +41,7 @@ const performLivenessCheck = theUrl =>
           log(`Notification`, message);
           notifier.notify(
             {
-              title: "Ping Me",
+              title: "It's Online!",
               message,
               icon: path.join(__dirname, `./assets/img/noun_sonar_924176.png`)
             },
