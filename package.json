@@ -1,6 +1,6 @@
 {
   "name": "is-it-online",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wait for a URL to return 2XX, show an OS notification, and exit",
   "main": "index.js",
   "author": "Caleb Peterson <caleb.peterson@zapier.com>",
