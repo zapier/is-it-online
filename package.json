@@ -4,6 +4,10 @@
   "description": "Wait for a URL to return 2XX, show an OS notification, and exit",
   "main": "index.js",
   "author": "Caleb Peterson <caleb.peterson@zapier.com>",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zapier/ping-me.git"
+  },
   "license": "MIT",
   "private": false,
   "bin": "index.js",
