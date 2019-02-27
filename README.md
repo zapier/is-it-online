@@ -1,4 +1,4 @@
-# Ping Me
+# Is It Online?
 
 **Wait for a URL to return 2XX, show an OS notification, and exit.**
 
@@ -8,8 +8,8 @@ I got tired of repeatedly refreshing my `localhost` pages in the browser to see 
 
 ## Usage
 
-1. ~~Install: `npm i -g ping-me`~~ [Build and install locally](#local-installation)
-2. Use: `ping-me http://localhost:8080`
+1. ~~Install: `npm i -g is-it-online`~~ [Build and install locally](#local-installation)
+2. Use: `is-it-online http://localhost:8080`
 
 ### Native Binary
 
@@ -33,7 +33,7 @@ Local development is typical for a `node` application:
 To install your local working copy:
 
 1. `npm pack`
-2. `npm i -g ping-me-1.0.0.tgz`
+2. `npm i -g is-it-online-1.0.0.tgz`
 
 ## Credits
 
